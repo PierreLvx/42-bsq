@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/14 03:42:50 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/14 14:02:50 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/15 17:56:51 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "libft.h"
+# include "utils.h"
 #endif

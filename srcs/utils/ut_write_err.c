@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ut_write_err.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/09/15 15:34:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/15 18:00:03 by plavaux          ###   ########.fr       */
+/*   Created: 2014/09/15 17:49:18 by plavaux           #+#    #+#             */
+/*   Updated: 2014/09/15 17:54:36 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../includes/libs.h"
 
-void	ft_putchar(char str);
-void	ft_putnbr(int s);
-void	ft_putstr(char *str);
-int		ft_strlen(char *str);
+/*
+** Print an error message to stderr
+** @param		the message to print
+*/
 
-#endif
+void	ut_write_err(char *str)
+{
+	write(2, str, ft_strlen(str));
+}
