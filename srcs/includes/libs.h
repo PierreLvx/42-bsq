@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/14 03:42:50 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/15 17:56:51 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/15 18:19:27 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <fcntl.h>
 # include "libft.h"
 # include "utils.h"
+
+typedef struct	s_const
+{
+	int			x;
+	int			y;
+}				t_const;
+
 #endif
