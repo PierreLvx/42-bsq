@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plavaux <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:30:55 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/15 15:31:04 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/15 15:51:29 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libs.h"
 
 void	ft_putstr(char *str)
 {

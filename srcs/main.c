@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plavaux <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/09/15 15:34:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/15 15:35:34 by plavaux          ###   ########.fr       */
+/*   Created: 2014/09/15 15:29:24 by plavaux           #+#    #+#             */
+/*   Updated: 2014/09/15 15:53:42 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "includes/libs.h"
 
-void	ft_putchar(char str);
-void	ft_putnbr(int s);
-void	ft_putstr(char *str);
+int		main(int argc, char **argv)
+{
 
-#endif LIBFT_H
+}
