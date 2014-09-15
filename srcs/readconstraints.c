@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/15 19:06:38 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/15 19:21:28 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_point create_point(int x, int y)
 	return (new);
 }
 
-t_const *allocate_array(char*filename, int j, int index)
+t_const *allocate_array(char *filename, int j, int index)
 {
 	char buff;
 	int i;
