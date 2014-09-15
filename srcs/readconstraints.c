@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/15 18:19:23 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/15 19:06:38 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_point create_point(int x, int y)
 
 	new.x = x;
 	new.y = y;
-	return new;
+	return (new);
 }
 
 t_const *allocate_array(char*filename, int j, int index)
@@ -46,7 +46,7 @@ t_const *allocate_array(char*filename, int j, int index)
 			array[index++] = create_point(i, j);
 	}
 	array[index] = create_point(-1, -1);
-	return array;
+	return (array);
 }
 
 t_const *read_constraints(char *filename)
@@ -54,5 +54,5 @@ t_const *read_constraints(char *filename)
 	t_const *array;
 
 	array = allocate_array(filename, 0, 0);
-	return array;
+	return (array);
 }

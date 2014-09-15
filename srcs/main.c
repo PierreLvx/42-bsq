@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:29:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/15 17:59:08 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/15 19:08:30 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int		main(int argc, char **argv)
 {
 	(void)argv;
 	if (argc == 1)
-		ut_write_err("no input map. exiting.\n");
+		// READ FROM STDIN
 	return (0);
 }
