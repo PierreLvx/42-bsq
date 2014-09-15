@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/15 19:47:26 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/15 23:48:59 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ t_const *allocate_array(char *filename, int j, int index)
 	int file;
 	t_const *array;
 
-	file = open(filename, RDONLY);
+	file = open(filename, O_RDONLY);
 	while(read(f, buff, 1))
 		i++;
 	close(file);
 	array = malloc((i + 1) * sizeof(t_const));
-	file = open(filename, RDONLY);
+	file = open(filename, O_RDONLY);
 	i = 0;
 	while (read(f, buff, 1))
 	{
