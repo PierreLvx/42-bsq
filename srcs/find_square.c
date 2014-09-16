@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 04:06:40 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/16 20:24:39 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/17 01:12:36 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		*get_square(int **table, int offset, int a)
 	y = 1;
 	answer = malloc(3 * sizeof(int));
 	size = 1;
-	while (y <= table[0][0] - size)
+	while (++y <= table[0][0] - size)
 	{
 		x = 0;
 		while (x < table[0][0] - size)
@@ -65,7 +65,6 @@ int		*get_square(int **table, int offset, int a)
 				offset = 1;
 			}
 		}
-		y++;
 	}
 	return (answer);
 }
