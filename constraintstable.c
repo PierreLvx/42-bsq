@@ -6,12 +6,14 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/16 04:00:44 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/16 07:00:16 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include  <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
+
+int *get_square(int **table, int sqr);
 
 int size_arrays(char *filename, int x)
 {
@@ -26,7 +28,7 @@ int size_arrays(char *filename, int x)
 	file = open(filename, O_RDONLY);
 	while (read(file,&buff, 1))
 	{
-		printf("%d ", x);
+//		printf("%d ", x);
 		if (buff == '\n')
 			n++;
 		if (n == x + 1)
@@ -56,7 +58,7 @@ int **allocate_array(char*filename, int j,  int k)
 	while(size_arrays(filename, i) != -1)
 	{
 		array[i] = malloc((size_arrays(filename, i) + 1) * sizeof(int));
-		printf("%d", size_arrays(filename, i));
+//		printf("%d", size_arrays(filename, i));
 		i++;
 	}
 	file = open(filename, O_RDONLY);
@@ -68,15 +70,15 @@ int **allocate_array(char*filename, int j,  int k)
 	}
 	while (read(file, &buff, 1))
 	{
-		printf("j: %d i: %d  ", j, i);
+//		printf("j: %d i: %d  ", j, i);
 		if (buff == 'o')
 		{
-			printf("o");
+//			printf("o");
 			array[j][k++] = i;
 		}
 		if (buff == '\n')
 		{
-			printf("new line");
+//			printf("new line");
 			array[j][k] = -1;
 			j++;
 			i = 0;
@@ -84,7 +86,7 @@ int **allocate_array(char*filename, int j,  int k)
 		}
 		else
 			i++;
-			printf("\n");
+//			printf("\n");
 	}
 	close(file);
 	return array;
@@ -103,21 +105,12 @@ int main(void)
 	int **array;
 	int i;
 	int j;
+	int *solution;
 
 	i = 0;
 	array = read_constraints("test.txt");
-	while(i < 10)
-	{
-		printf ("i : %d  ", i);
-		j = 0;
-		while(array[i][j] != -1)
-		{
-			printf("%d ", array[i][j]);
-			j++;
-		}
-		i++;
-		printf("\n");
-	}
-
+	solution = get_square(array, 10);
+//	printf("x: %d y: %d size %d", solution[0], solution[1], solution[2]);
+	print_table(array, 10, solution);
 	return (0);
 }
