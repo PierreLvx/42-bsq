@@ -6,17 +6,17 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/16 13:36:39 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/16 19:59:06 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libs.h"
-#include "includes/protos.h"
 
-int	size_arrays(char *filename, int x, int n)
+int			size_arrays(char *filename, int x)
 {
 	int		file;
 	int		*sizes;
+	int		n;
 	int		i;
 	char	buff;
 
@@ -42,7 +42,7 @@ int	size_arrays(char *filename, int x, int n)
 	return (i);
 }
 
-int	*get_info(char *filename)
+int			*get_info(char *filename)
 {
 	int		*array;
 	char	buff[8];
@@ -68,7 +68,7 @@ int	*get_info(char *filename)
 	return (array);
 }
 
-int	**allocate_array(char*filename, int j, int k)
+int			**allocate_array(char*filename, int j, int k)
 {
 	char	buff;
 	int		i;
@@ -76,11 +76,11 @@ int	**allocate_array(char*filename, int j, int k)
 	int		**array;
 
 	i = 1;
-	array = malloc((size_arrays(filename, -2, 0) + 1) * sizeof(int*));
+	array = malloc((size_arrays(filename, -2) + 1) * sizeof(int*));
 	array[0] = get_info(filename);
-	while (size_arrays(filename, i, 0) != -1)
+	while (size_arrays(filename, i) != -1)
 	{
-		array[i] = malloc((size_arrays(filename, i, 0) + 1) * sizeof(int));
+		array[i] = malloc((size_arrays(filename, i) + 1) * sizeof(int));
 		i++;
 	}
 	file = open(filename, O_RDONLY);
@@ -108,9 +108,9 @@ int	**allocate_array(char*filename, int j, int k)
 	return (array);
 }
 
-int	**read_constraints(char *filename)
+int			**read_constraints(char *filename)
 {
-	int **array;
+	int		**array;
 
 	array = allocate_array(filename, 1, 0);
 	return (array);
