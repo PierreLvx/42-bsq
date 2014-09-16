@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/16 20:39:14 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/16 20:56:59 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,8 @@ int			size_arrays(char *filename, int x)
 	if (n < (x + 1))
 		return (-1);
 	while (read(file, &buff, 1) && buff != '\n')
-	{
 		if (buff == 'o')
 			i++;
-	}
 	return (i);
 }
 
