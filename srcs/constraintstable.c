@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/16 20:58:50 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/16 23:37:22 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int			*get_info(char *filename)
 	return (array);
 }
 
-int			**allocate_array(char*filename, int j, int k)
+int			**allocate_array(char *filename, int j, int k)
 {
 	char	buff;
 	int		i;
