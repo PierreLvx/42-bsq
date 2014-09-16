@@ -6,13 +6,39 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:29:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/16 13:36:47 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/16 20:38:33 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libs.h"
 #include "includes/protos.h"
 
+/*
+** FOR TEST PURPOSES ONLY
+*/
+
+#include <time.h>
+
+
+
+int		main(void)
+{
+	int	**array;
+	int	*solution;
+
+	array = read_constraints("test.txt");
+	//ft_putstr("\033[1;31m##### MAP LOADED #####\033[0m\n");
+	//printf("0 -  %d, 1 -  %d, 2 -  %d, 3 -  %d", array[0][0],array[0][1], array[0][2], array[0][3]);
+	clock_t tic = clock();
+	solution = get_square(array, 1, 0);
+	print_table(array, array[0][0], solution);
+	clock_t toc = clock();;
+	printf("\033[1;31mRESOLUTION TIME = %f\033[0m\n", (double)(toc - tic) / CLOCKS_PER_SEC);
+	return (0);
+}
+
+
+/*
 int	main(void)
 {
 	int **array;
@@ -27,6 +53,7 @@ int	main(void)
 	print_table(array, array[0][0], solution);
 	return (0);
 }
+*/
 
 /*
 int		main(int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 06:20:12 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/16 15:09:57 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/16 20:39:54 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	print_table(int **table, int size, int *solution)
 {
 	int	i;
 	int	j;
-	int	k;
-	int	type;
+	//int	k;
+	//int	type;
 
 	j = 1;
-	k = 0;
+	//k = 0;
 	while (j <= size)
 	{
 		i = 0;

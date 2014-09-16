@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/14 03:42:50 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/16 19:26:27 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/16 20:38:58 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,8 @@ int	size_arrays(char *filename, int x, int n);
 int	*get_info(char *filename);
 int	**allocate_array(char*filename, int j, int k);
 int	**read_constraints(char *filename);
+
+int		is_in(int **table, int x, int y);
+void	print_table(int **table, int size, int *solution);
 
 #endif

@@ -15,8 +15,10 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = bsq
 
+SRCS = srcs/*.c srcs/*/*.c
+
 all:
-	$(CC) $(CFLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 

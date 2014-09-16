@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/16 19:59:06 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/16 20:39:14 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int			size_arrays(char *filename, int x)
 {
 	int		file;
-	int		*sizes;
+	//int		*sizes;
 	int		n;
 	int		i;
 	char	buff;
@@ -53,18 +53,18 @@ int			*get_info(char *filename)
 	file = open(filename, O_RDONLY);
 	read(file, buff, 8);
 	buff[8] = '\0';
-	printf("buff %s\n", buff);
+	//printf("buff %s\n", buff);
 	array[0] = ft_atoi(buff);
 	ptr = buff;
 	while (*ptr >= 48 && *ptr <= 57)
 		ptr++;
-	printf("%d\n", array[0]);
+	//printf("%d\n", array[0]);
 	array[1] = *(ptr++);
-	printf("%d\n", array[1]);
+	//printf("%d\n", array[1]);
 	array[2] = *(ptr++);
-	printf("%d\n", array[2]);
+	//printf("%d\n", array[2]);
 	array[3] = *ptr;
-	printf("%d\n", array[3]);
+	//printf("%d\n", array[3]);
 	return (array);
 }
 
