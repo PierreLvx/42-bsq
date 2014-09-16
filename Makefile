@@ -12,13 +12,14 @@
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+OPS = -Os
 
 NAME = bsq
 
 SRCS = srcs/*.c srcs/*/*.c
 
 all:
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) $(OPS)
 
 clean:
 
