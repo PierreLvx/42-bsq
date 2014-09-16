@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:29:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/16 20:46:52 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/16 22:38:56 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@
 
 #include <time.h>
 
-int		main(void)
+int		main(int argc, char **argv)
 {
 	int	**array;
 	int	*solution;
 
-	array = read_constraints("test.txt");
+	if (argc > 1)
+		array = read_constraints(argv[1]);
 	//ft_putstr("\033[1;31m##### MAP LOADED #####\033[0m\n");
 	//printf("0 -  %d, 1 -  %d, 2 -  %d, 3 -  %d", array[0][0],array[0][1], array[0][2], array[0][3]);
 	clock_t tic = clock();
