@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/16 20:56:59 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/16 20:58:50 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,8 @@ int			**allocate_array(char*filename, int j, int k)
 	file = open(filename, O_RDONLY);
 	i = 0;
 	while (read(file, &buff, 1))
-	{
 		if (buff == '\n')
 			break ;
-	}
 	while (read(file, &buff, 1))
 	{
 		if (buff == 'o')
