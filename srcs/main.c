@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:29:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/16 20:38:33 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/16 20:46:52 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 
 #include <time.h>
 
-
-
 int		main(void)
 {
 	int	**array;
@@ -32,11 +30,10 @@ int		main(void)
 	clock_t tic = clock();
 	solution = get_square(array, 1, 0);
 	print_table(array, array[0][0], solution);
-	clock_t toc = clock();;
+	clock_t toc = clock();
 	printf("\033[1;31mRESOLUTION TIME = %f\033[0m\n", (double)(toc - tic) / CLOCKS_PER_SEC);
 	return (0);
 }
-
 
 /*
 int	main(void)
