@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/01 14:26:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/01 18:34:18 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/16 13:21:07 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libs.h"
 
 void	change_number(int *num, int *factor, char *ptr)
 {
