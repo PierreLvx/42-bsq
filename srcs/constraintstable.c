@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 02:37:41 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/17 03:20:21 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,13 @@ int			*get_info(char *filename)
 	return (array);
 }
 
+int			return_minus_one(int *i, int *k)
+{
+	*i = 0;
+	*k = 0;
+	return (-1);
+}
+
 int			**allocate_array(char*filename, int j, int k, int i)
 {
 	char	buff;
@@ -66,32 +73,21 @@ int			**allocate_array(char*filename, int j, int k, int i)
 	int		file;
 	int		**array;
 
-	i = 0;
 	sizes = get_info(filename);
 	array = malloc((sizes[0] + 1) * sizeof(int*));
 	array[0] = sizes;
 	sizes = size_arrays(filename, array[0][0]);
-	while (sizes[i] != -1)
-	{
+	while (sizes[++i] != -1)
 		array[i + 1] = malloc((sizes[i] + 1) * sizeof(int));
-		i++;
-	}
+	free(sizes);
 	file = open(filename, O_RDONLY);
-	i = 0;
-	while (read(file, &buff, 1))
-		if (buff == '\n')
-			break ;
+	while (read(file, &buff, 1) && buff != '\n' && !(i = 0));
 	while (read(file, &buff, 1))
 	{
 		if (buff == 'o')
 			array[j][k++] = i;
 		if (buff == '\n')
-		{
-			array[j][k] = -1;
-			j++;
-			i = 0;
-			k = 0;
-		}
+			array[j++][k] = return_minus_one(&i, &k);
 		else
 			i++;
 	}
@@ -103,6 +99,6 @@ int			**read_constraints(char *filename)
 {
 	int		**array;
 
-	array = allocate_array(filename, 1, 0, 1);
+	array = allocate_array(filename, 1, 0, -1);
 	return (array);
 }
