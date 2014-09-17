@@ -6,37 +6,37 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 01:32:02 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/17 02:37:41 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libs.h"
 
-int			size_arrays(char *filename, int x)
+int			*size_arrays(char *filename, int x)
 {
 	int		file;
-	int		n;
+	int		*sizes;
 	int		i;
 	char	buff;
 
 	i = 0;
-	n = 0;
+	sizes = malloc(sizeof(int) * (x + 1));
+	while (i < x)
+		sizes[i++] = 0;
+	sizes[x] = -1;
+	i = 0;
 	file = open(filename, O_RDONLY);
 	while (read(file, &buff, 1))
-	{
 		if (buff == '\n')
-			n++;
-		if (n == x + 1)
 			break ;
-	}
-	if (x == -2)
-		return (n);
-	if (n < (x + 1))
-		return (-1);
-	while (read(file, &buff, 1) && buff != '\n')
+	while (read(file, &buff, 1) && i < x)
+	{
 		if (buff == 'o')
+			sizes[i]++;
+		if (buff == '\n')
 			i++;
-	return (i);
+	}
+	return (sizes);
 }
 
 int			*get_info(char *filename)
@@ -53,32 +53,27 @@ int			*get_info(char *filename)
 	ptr = buff;
 	while (*ptr >= 48 && *ptr <= 57)
 		ptr++;
-	ft_putnbr(array[0]);
-	ft_putstr(" | ");
 	array[1] = *(ptr++);
-	ft_putnbr(array[1]);
-	ft_putstr(" | ");
 	array[2] = *(ptr++);
-	ft_putnbr(array[2]);
-	ft_putstr(" | ");
 	array[3] = *ptr;
-	ft_putnbr(array[3]);
 	return (array);
 }
 
-int			**allocate_array(char *filename, int j, int k)
+int			**allocate_array(char*filename, int j, int k, int i)
 {
 	char	buff;
-	int		i;
+	int		*sizes;
 	int		file;
 	int		**array;
 
-	i = 1;
-	array = malloc((size_arrays(filename, -2) + 1) * sizeof(int*));
-	array[0] = get_info(filename);
-	while (size_arrays(filename, i) != -1)
+	i = 0;
+	sizes = get_info(filename);
+	array = malloc((sizes[0] + 1) * sizeof(int*));
+	array[0] = sizes;
+	sizes = size_arrays(filename, array[0][0]);
+	while (sizes[i] != -1)
 	{
-		array[i] = malloc((size_arrays(filename, i) + 1) * sizeof(int));
+		array[i + 1] = malloc((sizes[i] + 1) * sizeof(int));
 		i++;
 	}
 	file = open(filename, O_RDONLY);
@@ -108,6 +103,6 @@ int			**read_constraints(char *filename)
 {
 	int		**array;
 
-	array = allocate_array(filename, 1, 0);
+	array = allocate_array(filename, 1, 0, 1);
 	return (array);
 }

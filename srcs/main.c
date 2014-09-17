@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:29:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/17 01:31:32 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/17 02:38:43 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	solve_map(char **argv, int i)
 	int	*solution;
 
 	array = read_constraints(argv[i]);
-	ft_putchar('\n');
-	ft_putstr("\033[1;31m##### MAP LOADED #####\033[0m\n");
 	clock_t tic = clock();
 	solution = get_square(array, 1, 0);
 	print_table(array, array[0][0], solution);
