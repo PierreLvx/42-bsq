@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ut_write_err.c                                     :+:      :+:    :+:   */
+/*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/09/15 17:49:18 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/15 17:54:36 by plavaux          ###   ########.fr       */
+/*   Created: 2014/09/17 16:16:30 by plavaux           #+#    #+#             */
+/*   Updated: 2014/09/18 00:38:56 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libs.h"
+#include "includes/libs.h"
+#include "includes/protos.h"
 
 /*
-** Print an error message to stderr
-** @param		the message to print
+** Lines of the same length
+** At least one line of with one cell
+** Each line ends with a \n
+** In case of invalid map, return map error 
 */
 
-void	ut_write_err(char *str)
+void		chk_map_chars(char buff, int *array)
 {
-	write(2, str, ft_strlen(str));
+	if (buff != array[1] && buff != array[2] && buff != array[3] && buff != '\n')
+	{
+		ft_write_err("map error\n");
+		exit (0);
+	}
 }

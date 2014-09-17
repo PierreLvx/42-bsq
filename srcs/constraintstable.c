@@ -6,14 +6,14 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 23:18:07 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 00:28:45 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libs.h"
 #include "includes/protos.h"
 
-int			*size_arrays(char *filename, int x)
+int			*size_arrays(char *filename, int x, int *array)
 {
 	int		file;
 	int		*sizes;
@@ -32,6 +32,7 @@ int			*size_arrays(char *filename, int x)
 			break ;
 	while (read(file, &buff, 1) && i < x)
 	{
+		chk_map_chars(buff, array);
 		if (buff == 'o')
 			sizes[i]++;
 		if (buff == '\n')
@@ -81,7 +82,7 @@ int			**allocate_array(char*filename, int j, int k, int i)
 	sizes = get_info(filename);
 	array = malloc((sizes[0] + 1) * sizeof(int*));
 	array[0] = sizes;
-	sizes = size_arrays(filename, array[0][0]);
+	sizes = size_arrays(filename, array[0][0], array[0]);
 	while (sizes[++i] != -1)
 		array[i + 1] = malloc((sizes[i] + 1) * sizeof(int));
 	free(sizes);

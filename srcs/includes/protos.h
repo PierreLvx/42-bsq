@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/14 03:42:50 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/17 23:18:51 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 00:32:45 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	disp_stdin(void);
 int		can_fit_square(int size, int x, int y, int **table);
 int		*get_square(int **table, int offset, int a, int size);
 
-int		*size_arrays(char *filename, int x);
+int		*size_arrays(char *filename, int x, int *array);
 int		*get_info(char *filename);
 int		**allocate_array(char*filename, int j, int k, int i);
 int		**read_constraints(char *filename);
@@ -26,5 +26,7 @@ int		is_in(int **table, int x, int y);
 void	print_table(int **table, int size, int *solution);
 
 void	solve_map(char **argv, int i);
+
+void	chk_map_chars(char buff, int *array);
 
 #endif
