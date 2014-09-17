@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 04:06:40 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 02:35:22 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/17 03:00:23 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,15 @@ int		cant_fit_square(int size, int x, int y, int **table)
 	return (0);
 }
 
-int		*get_square(int **table, int offset, int a)
+void	square_offset(int *x, int *offset)
 {
-	int	size;
+	*x += *offset;
+	*offset = 1;
+}
+
+
+int		*get_square(int **table, int offset, int a, int size)
+{
 	int	x;
 	int	y;
 	int	*answer;
@@ -46,7 +52,6 @@ int		*get_square(int **table, int offset, int a)
 	x = 0;
 	y = 0;
 	answer = malloc(3 * sizeof(int));
-	size = 1;
 	while (++y <= table[0][0] - size)
 	{
 		x = 0;
@@ -60,12 +65,8 @@ int		*get_square(int **table, int offset, int a)
 				offset = a;
 			}
 			else
-			{
-				x += offset;
-				offset = 1;
-			}
+				square_offset(&x, &offset);
 		}
-		//y++;
 	}
 	return (answer);
 }
