@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 03:20:21 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/17 03:32:02 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,14 @@ int			**allocate_array(char*filename, int j, int k, int i)
 		array[i + 1] = malloc((sizes[i] + 1) * sizeof(int));
 	free(sizes);
 	file = open(filename, O_RDONLY);
-	while (read(file, &buff, 1) && buff != '\n' && !(i = 0));
-	while (read(file, &buff, 1))
+	while (read(file, &buff, 1) && (buff != '\n'))
+		i = 0;
+	while (read(file, &buff, 1) && ++i)
 	{
 		if (buff == 'o')
-			array[j][k++] = i;
+			array[j][k++] = --i;
 		if (buff == '\n')
 			array[j++][k] = return_minus_one(&i, &k);
-		else
-			i++;
 	}
 	close(file);
 	return (array);
