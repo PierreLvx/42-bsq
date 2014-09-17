@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 06:20:12 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 15:53:14 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/17 18:40:02 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		is_in(int **table, int x, int y)
 	int	i;
 
 	i = 0;
-	while (table[y][i] != -1)
+	while (table[y][i] > 0)
 	{
 		if (table[y][i] == x)
 			return (1);
@@ -35,13 +35,16 @@ void	print_table(int **table, int size, int *solution)
 	while (j <= size)
 	{
 		i = 0;
-		while (i < size)
+		while (i < table[0][5])
 		{
 			if (i >= solution[0] && i < solution[0] + solution[2]
 					&& j >= solution[1] && j < solution[1] + solution[2])
 				ft_putchar(table[0][3]);
 			else if (is_in(table, i, j))
+			{
+//				printf("%d  ", i);
 				ft_putchar(table[0][2]);
+			}
 			else
 				ft_putchar(table[0][1]);
 			i++;

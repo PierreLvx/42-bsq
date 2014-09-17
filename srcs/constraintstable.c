@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 12:38:43 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/17 17:48:13 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int			*get_info(char *filename)
 	int		file;
 	char	*ptr;
 
-	array = malloc(sizeof(int) * 4);
+	array = malloc(sizeof(int) * 5);
 	file = open(filename, O_RDONLY);
 	read(file, buff, 20);
 	array[0] = ft_atoi(buff);
@@ -59,11 +59,16 @@ int			*get_info(char *filename)
 	return (array);
 }
 
-int			return_minus_one(int *i, int *k)
+int			return_minus_sizex(int *i, int *k, int *sizex)
 {
+	int temp;
+
+	*sizex = *i + 1;
+	temp = *i;
 	*i = 0;
 	*k = 0;
-	return (-1);
+
+	return (-1 * (temp + 1));
 }
 
 int			**allocate_array(char*filename, int j, int k, int i)
@@ -88,7 +93,7 @@ int			**allocate_array(char*filename, int j, int k, int i)
 		if (buff == 'o')
 			array[j][k++] = i;
 		if (buff == '\n')
-			array[j++][k] = return_minus_one(&i, &k);
+			array[j++][k] = return_minus_sizex(&i, &k, &(array[0][5]));
 	}
 	close(file);
 	return (array);
