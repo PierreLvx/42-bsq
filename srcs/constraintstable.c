@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 17:48:13 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/17 21:59:37 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int			return_minus_sizex(int *i, int *k, int *sizex)
 	temp = *i;
 	*i = 0;
 	*k = 0;
-
 	return (-1 * (temp + 1));
 }
 

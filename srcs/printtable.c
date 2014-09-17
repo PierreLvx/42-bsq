@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 06:20:12 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 18:40:02 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/17 21:59:57 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,7 @@ void	print_table(int **table, int size, int *solution)
 					&& j >= solution[1] && j < solution[1] + solution[2])
 				ft_putchar(table[0][3]);
 			else if (is_in(table, i, j))
-			{
-//				printf("%d  ", i);
 				ft_putchar(table[0][2]);
-			}
 			else
 				ft_putchar(table[0][1]);
 			i++;
