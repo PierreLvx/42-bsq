@@ -12,7 +12,7 @@
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-OPS = -Os
+OPS = -O2
 
 NAME = bsq
 
