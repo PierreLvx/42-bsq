@@ -6,11 +6,12 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 22:43:46 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/17 23:18:07 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libs.h"
+#include "includes/protos.h"
 
 int			*size_arrays(char *filename, int x)
 {
