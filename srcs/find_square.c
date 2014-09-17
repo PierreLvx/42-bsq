@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 04:06:40 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 03:00:23 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/17 15:52:25 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	square_offset(int *x, int *offset)
 	*x += *offset;
 	*offset = 1;
 }
-
 
 int		*get_square(int **table, int offset, int a, int size)
 {
