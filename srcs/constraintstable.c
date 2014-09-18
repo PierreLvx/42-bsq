@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 02:21:48 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/18 03:02:13 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int			*get_info(char *filename)
 	array = malloc(sizeof(int*) * 5);
 	file = open(filename, O_RDONLY);
 	read(file, buff, 20);
-	array[0] = ft_atoi(buff);
+	array[0] = ft_special_atoi(buff);
 	ptr = buff;
 	while (*ptr >= 48 && *ptr <= 57)
 		ptr++;
@@ -91,7 +91,7 @@ int			**allocate_array(char*filename, int j, int k, int i)
 		i = 0;
 	while (read(file, &buff, 1) && ++i)
 	{
-		if (buff == 'o')
+		if (buff == array[0][2])
 			array[j][k++] = i - 1;
 		if (buff == '\n')
 			array[j++][k] = return_minus_sizex(&i, &k, &(array[0][5]));

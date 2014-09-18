@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/01 14:26:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/16 13:21:07 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 02:34:49 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,35 @@ int		ft_atoi(char *str)
 		length++;
 	}
 	str--;
+	while (length-- > 0)
+	{
+		change_number(&result, &factor, str);
+		str--;
+	}
+	return (result);
+}
+
+int		ft_special_atoi(char *str)
+{
+	int result;
+	int factor;
+	int length;
+
+	factor = 1;
+	result = 0;
+	length = 0;
+	while (*str != '\n')
+	{
+		str++;
+		length++;
+	}
+	str--;
+	str--;
+	length--;
+	str--;
+	length--;
+	str--;
+	length--;
 	while (length-- > 0)
 	{
 		change_number(&result, &factor, str);
