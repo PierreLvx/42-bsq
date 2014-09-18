@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 19:59:36 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/18 20:23:08 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int			*get_info(char *filename)
 	return (array);
 }
 
-int			return_minus_sizex(int *i, int *k, int *sizex)
+int			return_minus_sizex(int *i, int *k, int *sizex, int *count)
 {
 	int temp;
 
@@ -70,6 +70,18 @@ int			return_minus_sizex(int *i, int *k, int *sizex)
 	temp = *i;
 	*i = 0;
 	*k = 0;
+	if (*count > 0)
+	{
+		if (*count != temp)
+			*count = -1;
+	}
+	else
+	{
+		if (*count == 0)
+			*count = temp;
+	}
+	if (temp == 0)
+		*i = -1;
 	return (-1 * (temp + 1));
 }
 
@@ -97,14 +109,11 @@ int			**allocate_array(char*filename, int j, int k, int i)
 		if (buff == array[0][2])
 			array[j][k++] = i - 1;
 		if (buff == '\n')
-		{
-			array[j++][k] = return_minus_sizex(&i, &k, &(array[0][4]));
-			count++;
-		}
+			array[j++][k] = return_minus_sizex(&i, &k, &(array[0][4]), &count);
 	}
-	chk_map_min(*array, file);
-	chk_line_endings(*array, count, file);
-	return (array);
+//	chk_map_min(*array, file);
+//	chk_line_endings(*array, count, file);
+	return (count != -1 && j == array[0][0]) ? array : NULL;
 }
 
 int			**read_constraints(char *filename)

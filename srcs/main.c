@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:29:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 18:49:58 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/18 20:22:49 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ void	solve_map(char **argv, int i)
 	int	*solution;
 
 	array = read_constraints(argv[i]);
+	if (array == NULL)
+	{
+		ft_write_err("map error\n");
+		return ;
+	}
 	solution = get_square(array, 1, 0, 1);
 	print_table(array, array[0][0], solution);
 }
@@ -29,6 +34,11 @@ void	solve_map_stdin(void)
 	int *solution;
 
 	array = get_stdin();
+	if (array == NULL)
+	{
+		ft_write_err("map error\n");
+		return ;
+	}
 	solution = get_square(array, 1, 0, 1);
 	print_table(array, array[0][0], solution);
 }
