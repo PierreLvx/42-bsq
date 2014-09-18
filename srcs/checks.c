@@ -6,19 +6,12 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/17 16:16:30 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 15:57:41 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 16:10:42 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libs.h"
 #include "includes/protos.h"
-
-/*
-** Lines of the same length
-** At least one line of with one cell
-** Each line ends with a \n
-** In case of invalid map, return map error
-*/
 
 void		chk_map_chars(char buff, int *array)
 {
@@ -30,9 +23,22 @@ void		chk_map_chars(char buff, int *array)
 	}
 }
 
+/*
+void		check_line_len()
+{
+
+}
+*/
+
+/*
+void		chk_map_min()
+{
+}
+*/
+
 void		chk_line_endings(int *array, int count, int file)
 {
-	if (count != array[4])
+	if (count != array[0])
 	{
 		ft_write_err("map error\n");
 		exit (0);
