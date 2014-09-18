@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:29:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 11:07:09 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 11:31:26 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,15 @@ int		main(int argc, char **argv)
 {
 	int i;
 
-	i = 1;
 	if (argc > 1)
+	{
+		i = 1;
 		while (i < argc)
 		{
 			solve_map(argv, i);
 			i++;
 		}
+	}
 	if (argc == 1)
 		solve_map_stdin();
 	return (0);
