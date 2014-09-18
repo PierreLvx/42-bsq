@@ -22,15 +22,15 @@ INCS = includes/*.h
 OBJ = $(patsubst srcs/%.c, %.o, $(SRCS))
 
 all:
-	$(CC) $(CFLAGS) -I $(INCS) -c $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) $(OPS)
+	@$(CC) $(CFLAGS) -I $(INCS) -c $(SRCS)
+	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME) $(OPS)
 
 clean:
 	@rm -f $(OBJ)
 
-fclean:
+fclean: clean
 	@rm -f $(NAME)
-re:
-	flcean all
+
+re: fclean all
 
 .PHONY: all clean fclean re
