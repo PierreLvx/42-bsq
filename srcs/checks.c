@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/17 16:16:30 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 15:54:09 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 15:57:41 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ void		chk_map_chars(char buff, int *array)
 	}
 }
 
-void		chk_line_endings(int *array, int count)
+void		chk_line_endings(int *array, int count, int file)
 {
 	if (count != array[4])
 	{
 		ft_write_err("map error\n");
 		exit (0);
 	}
+	close(file);
 }
