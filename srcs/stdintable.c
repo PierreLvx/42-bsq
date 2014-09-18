@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/18 03:40:21 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 20:17:48 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 21:51:54 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,17 @@ int			*read_first_line(void)
 	return (info);
 }
 
-int			*get_line_obstacles(char c, int i, int *sizex, int j)
+int			*get_line_obstacles(int **chars, int i, int size, int j)
 {
 	char	buff;
 	int		*array;
 	int		*new;
-	int		size;
 
-	size = 1;
 	array = malloc(1);
 	new = malloc(1);
 	while (read(0, &buff, 1) && (buff != '\n'))
 	{
-		if (buff == c)
+		if (buff == (*chars)[2])
 		{
 			i = -1;
 			new = malloc(sizeof(int) * (size + 1));
@@ -89,11 +87,13 @@ int			*get_line_obstacles(char c, int i, int *sizex, int j)
 			size++;
 			array = new;
 		}
+		if (buff != (*chars)[1] && buff != (*chars)[2] && buff != (*chars)[3])
+			return (NULL);
 		j++;
 	}
 	new[i + 1] = -1 * j;
-	*sizex = j;
-	return (new);
+	(*chars)[4] = ((*chars)[4] == -1) ? j : (*chars)[4];
+	return (j == (*chars)[4] && j > 0 && buff == '\n') ? new : NULL;
 }
 
 int			**get_stdin(void)
@@ -106,9 +106,15 @@ int			**get_stdin(void)
 	info = read_first_line();
 	array = malloc(sizeof(int*) * (info[0] + 1));
 	array[0] = info;
+	array[0][4] = -1;
 	while (i <= info[0])
 	{
-		array[i] = get_line_obstacles(array[0][2], -1, &array[0][4], 0);
+		array[i] = get_line_obstacles(&(array[0]), -1, 1, 0);
+		if (array[i] == NULL)
+		{
+			array = NULL;
+			return (array);
+		}
 		i++;
 	}
 	return (array);
