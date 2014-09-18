@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:34:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 22:05:53 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 22:10:01 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 void	ft_putchar(char str);
-void	ft_putstr(char *str);
 int		ft_strlen(char *str);
 
 void	change_number(int *num, int *factor, char *ptr);
