@@ -16,7 +16,8 @@ OPS = -O2
 
 NAME = bsq
 
-INCS = includes/*.h
+INCS =	./includes/libft.h srcs/includes/libs.h srcs/includes/protos.h
+
 SRCS =	srcs/checks.c \
 		srcs/constraintstable.c \
 		srcs/find_square.c \
