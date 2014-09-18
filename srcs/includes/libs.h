@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/14 03:42:50 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/16 20:34:33 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 22:59:09 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include "libft.h"
-# include "utils.h"
 
 typedef struct	s_const
 {
