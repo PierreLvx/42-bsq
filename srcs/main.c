@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:29:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 11:31:26 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 18:49:58 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	solve_map_stdin(void)
 	int **array;
 	int *solution;
 
-	array = read_stdin();
+	array = get_stdin();
 	solution = get_square(array, 1, 0, 1);
 	print_table(array, array[0][0], solution);
 }

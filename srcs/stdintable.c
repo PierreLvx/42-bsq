@@ -6,50 +6,110 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/18 03:40:21 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 11:08:39 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 18:51:39 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libs.h"
 #include "includes/protos.h"
 
-char		*add_char(char c, char **array)
+char		*add_char(int i)
 {
 	char	*new;
-	char	*ptr;
-	int		i;
+	char *array;
 	int		size;
+	char buff;
 
-	ptr = *array;
-	i = 0;
-	size = 0;
-	while (ptr[i])
+	size = 1;
+	array = malloc(1);
+	while (read(0, &buff, 1) != -1 && buff != '\n')
+	{
+		i = -1;
+		new = malloc(sizeof(char) * (size + 2));
+		while (++i < size - 1)
+			new[i] = array [i];
+		free(array);
+		new[i] = buff;
+		new[i + 1] = '\0';
 		size++;
-	new = malloc(sizeof(char) * (size + 2));
-	i = -1;
-	while (ptr[++i])
-		new[i] = ptr[i];
-	free(ptr);
-	new[i++] = c;
-	new[i] = '\0';
-	return (new);
+		array = new;
+		if (new[i] == 'n' && new[i - 1] == '\\')
+			new[i - 1] = '\0';
+	} 
+	return (array);
 }
 
-int			**read_stdin(void)
+int			*get_info_stdin(char *firstline)
 {
-	int		**array;
-	char	buff;
+	int		*array;
+	char *ptr;
+
+	array = malloc(sizeof(int) * 5);
+	array[0] = ft_special_atoi(firstline);
+	ptr = firstline;
+	while (*ptr && *ptr != '\n')
+		ptr++;
+	ptr--;
+	array[3] = *(ptr--);
+	array[2] = *(ptr--);
+	array[1] = *ptr;
+	return (array);
+}
+
+int			*read_first_line(void)
+{
+	int		*info;
 	char	*line;
 
-	line = malloc(sizeof(char));
-	line[0] = '\0';
-	while (buff != '\n')
+	line = add_char(-1);
+	info = get_info_stdin(line);
+	return (info);
+}
+
+int *get_line_obstacles(char c, int i, int *sizex, int j)
+{
+	char buff;
+	int *array;
+	int *new;
+	int size;
+
+	size = 1;
+	array = malloc(1);
+	new = malloc(1);
+	while(read(0, &buff, 1) && (buff != '\n'))
 	{
-		printf("%c", buff);
-		read(0, &buff, 1);
-		add_char(buff, &line);
+		if (buff == c)
+		{
+				i = -1;
+			new = malloc(sizeof(int) * (size + 1));
+			while (++i < size - 1)
+				new[i] = array [i];
+			free(array);
+			new[i] = j;
+			size++;
+			array = new;
+		}
+		j++;
 	}
-	printf("%s", line);
-	array = malloc(sizeof(int*) * 10);
-	return (array);
+	new[i + 1] = -1 * j;
+	*sizex = j;
+	return new;
+}
+
+int			**get_stdin()
+{
+	int **array;
+	int *info;
+	int i;
+
+	i = 1;
+	info = read_first_line();
+	array = malloc(sizeof(int*) * (info[0] + 1));
+	array[0] = info;
+	while (i <= info[0])
+	{
+		array[i] = get_line_obstacles(array[0][2], -1, &array[0][4], 0);
+		i++;
+	}
+	return array;
 }
