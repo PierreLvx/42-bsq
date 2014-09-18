@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 01:09:03 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/18 02:21:48 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int			*size_arrays(char *filename, int x, int *array)
 	while (read(file, &buff, 1) && i < x)
 	{
 		chk_map_chars(buff, array);
-		if (buff == 'o')
+		if (buff == array[2])
 			sizes[i]++;
 		if (buff == '\n')
 			i++;
