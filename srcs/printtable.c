@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 06:20:12 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/17 21:59:57 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 01:44:05 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		is_in(int **table, int x, int y)
 	int	i;
 
 	i = 0;
-	while (table[y][i] > 0)
+	while (table[y][i] >= 0)
 	{
 		if (table[y][i] == x)
 			return (1);

@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 00:28:45 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 01:09:03 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int			return_minus_sizex(int *i, int *k, int *sizex)
 {
 	int temp;
 
-	*sizex = *i + 1;
+	*sizex = *i - 1;
 	temp = *i;
 	*i = 0;
 	*k = 0;
@@ -92,7 +92,7 @@ int			**allocate_array(char*filename, int j, int k, int i)
 	while (read(file, &buff, 1) && ++i)
 	{
 		if (buff == 'o')
-			array[j][k++] = i;
+			array[j][k++] = i - 1;
 		if (buff == '\n')
 			array[j++][k] = return_minus_sizex(&i, &k, &(array[0][5]));
 	}
