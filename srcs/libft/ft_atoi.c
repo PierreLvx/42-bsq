@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/01 14:26:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 19:58:30 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/18 22:00:41 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,29 +24,6 @@ void	change_number(int *num, int *factor, char *ptr)
 		*factor = 1;
 		*num = 0;
 	}
-}
-
-int		ft_atoi(char *str)
-{
-	int result;
-	int factor;
-	int length;
-
-	factor = 1;
-	result = 0;
-	length = 0;
-	while (*str)
-	{
-		str++;
-		length++;
-	}
-	str--;
-	while (length-- > 0)
-	{
-		change_number(&result, &factor, str);
-		str--;
-	}
-	return (result);
 }
 
 int		ft_special_atoi(char *str)
