@@ -16,8 +16,17 @@ OPS = -O2
 
 NAME = bsq
 
-SRCS = srcs/*.c srcs/libft/*.c srcs/utils/*.c
 INCS = includes/*.h
+SRCS =	srcs/checks.c \
+		srcs/constraintstable.c \
+		srcs/find_square.c \
+		srcs/main.c \
+		srcs/printtable.c \
+		srcs/stdintable.c \
+		srcs/libft/ft_atoi.c \
+		srcs/libft/ft_putchar.c \
+		srcs/libft/ft_strlen.c \
+		srcs/utils/ft_write_err.c
 
 OBJ = $(patsubst srcs/%.c, %.o, $(SRCS))
 
