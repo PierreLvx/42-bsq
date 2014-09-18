@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/17 16:16:30 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 16:10:42 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 16:21:28 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,18 @@ void		chk_map_chars(char buff, int *array)
 	}
 }
 
+void		chk_map_min(int *array, int file)
+{
+	if (array[4] < 1)
+	{
+		ft_write_err("map error\n");
+		close(file);
+		exit (0);
+	}
+}
+
 /*
 void		check_line_len()
-{
-
-}
-*/
-
-/*
-void		chk_map_min()
 {
 }
 */
@@ -41,6 +44,7 @@ void		chk_line_endings(int *array, int count, int file)
 	if (count != array[0])
 	{
 		ft_write_err("map error\n");
+		close(file);
 		exit (0);
 	}
 	close(file);

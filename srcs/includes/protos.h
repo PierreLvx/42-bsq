@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/14 03:42:50 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 15:57:53 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 16:21:52 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ void	solve_map(char **argv, int i);
 
 void	chk_map_chars(char buff, int *array);
 void	chk_line_endings(int *array, int count, int file);
+void	chk_map_min(int *array, int file);
 
 #endif

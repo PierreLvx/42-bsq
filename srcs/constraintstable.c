@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 15:57:44 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 16:21:24 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ int			**allocate_array(char*filename, int j, int k, int i)
 			count++;
 		}
 	}
+	chk_map_min(*array, file);
 	chk_line_endings(*array, count, file);
 	return (array);
 }
