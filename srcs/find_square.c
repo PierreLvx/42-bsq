@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/16 04:06:40 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 01:43:09 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/18 11:43:09 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		*get_square(int **table, int a, int size)
 	while (++y <= table[0][0] - size + 1)
 	{
 		x = 0;
-		while (x < table[0][5] - size)
+		while (x < table[0][4] - size)
 		{
 			a = cant_fit_square(size, x, y, table);
 			if (a == -1)

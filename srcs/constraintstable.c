@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 11:16:12 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 11:42:18 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int			**allocate_array(char*filename, int j, int k, int i)
 		if (buff == array[0][2])
 			array[j][k++] = i - 1;
 		if (buff == '\n')
-			array[j++][k] = return_minus_sizex(&i, &k, &(array[0][5]));
+			array[j++][k] = return_minus_sizex(&i, &k, &(array[0][4]));
 	}
 	close(file);
 	return (array);
