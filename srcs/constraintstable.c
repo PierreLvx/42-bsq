@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 16:21:24 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 19:59:36 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,12 @@ int			*get_info(char *filename)
 	read(file, buff, 20);
 	array[0] = ft_special_atoi(buff);
 	ptr = buff;
-	while (*ptr >= 48 && *ptr <= 57)
+	while (*ptr && *ptr != '\n')
 		ptr++;
-	array[1] = *(ptr++);
-	array[2] = *(ptr++);
-	array[3] = *ptr;
+	ptr--;
+	array[3] = *(ptr--);
+	array[2] = *(ptr--);
+	array[1] = *ptr;
 	return (array);
 }
 
