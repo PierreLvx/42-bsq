@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/18 03:40:21 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 18:51:39 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/18 20:17:48 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 char		*add_char(int i)
 {
 	char	*new;
-	char *array;
+	char	*array;
 	int		size;
-	char buff;
+	char	buff;
 
 	size = 1;
 	array = malloc(1);
@@ -35,14 +35,14 @@ char		*add_char(int i)
 		array = new;
 		if (new[i] == 'n' && new[i - 1] == '\\')
 			new[i - 1] = '\0';
-	} 
+	}
 	return (array);
 }
 
 int			*get_info_stdin(char *firstline)
 {
 	int		*array;
-	char *ptr;
+	char	*ptr;
 
 	array = malloc(sizeof(int) * 5);
 	array[0] = ft_special_atoi(firstline);
@@ -66,21 +66,21 @@ int			*read_first_line(void)
 	return (info);
 }
 
-int *get_line_obstacles(char c, int i, int *sizex, int j)
+int			*get_line_obstacles(char c, int i, int *sizex, int j)
 {
-	char buff;
-	int *array;
-	int *new;
-	int size;
+	char	buff;
+	int		*array;
+	int		*new;
+	int		size;
 
 	size = 1;
 	array = malloc(1);
 	new = malloc(1);
-	while(read(0, &buff, 1) && (buff != '\n'))
+	while (read(0, &buff, 1) && (buff != '\n'))
 	{
 		if (buff == c)
 		{
-				i = -1;
+			i = -1;
 			new = malloc(sizeof(int) * (size + 1));
 			while (++i < size - 1)
 				new[i] = array [i];
@@ -93,14 +93,14 @@ int *get_line_obstacles(char c, int i, int *sizex, int j)
 	}
 	new[i + 1] = -1 * j;
 	*sizex = j;
-	return new;
+	return (new);
 }
 
-int			**get_stdin()
+int			**get_stdin(void)
 {
-	int **array;
-	int *info;
-	int i;
+	int		**array;
+	int		*info;
+	int		i;
 
 	i = 1;
 	info = read_first_line();
@@ -111,5 +111,5 @@ int			**get_stdin()
 		array[i] = get_line_obstacles(array[0][2], -1, &array[0][4], 0);
 		i++;
 	}
-	return array;
+	return (array);
 }

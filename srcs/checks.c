@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/17 16:16:30 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 16:21:28 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 20:19:16 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,6 @@ void		chk_map_min(int *array, int file)
 		exit (0);
 	}
 }
-
-/*
-void		check_line_len()
-{
-}
-*/
 
 void		chk_line_endings(int *array, int count, int file)
 {
