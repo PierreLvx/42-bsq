@@ -16,15 +16,20 @@ OPS = -O2
 
 NAME = bsq
 
-SRCS = srcs/*.c srcs/*/*.c
+SRCS = srcs/*.c srcs/libft/*.c srcs/utils/*.c
+INCS = includes/*.h
+
+OBJ = $(patsubst srcs/%.c, %.o, $(SRCS))
 
 all:
+	$(CC) $(CFLAGS) -I $(INCS) -c $(SRCS)
 	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) $(OPS)
 
 clean:
+	@rm -f $(OBJ)
 
 fclean:
-
+	@rm -f $(NAME)
 re:
 	flcean all
 
