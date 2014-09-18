@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:29:24 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 05:23:16 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/18 11:07:09 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	solve_map_stdin(void)
 	print_table(array, array[0][0], solution);
 }
 
-int     main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	int i;
 
