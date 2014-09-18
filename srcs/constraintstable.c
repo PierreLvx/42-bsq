@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 20:23:08 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/18 20:45:29 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int			**allocate_array(char*filename, int j, int k, int i)
 	}
 //	chk_map_min(*array, file);
 //	chk_line_endings(*array, count, file);
-	return (count != -1 && j == array[0][0]) ? array : NULL;
+	return (count != -1 && j == array[0][0] + 1) ? array : NULL;
 }
 
 int			**read_constraints(char *filename)
