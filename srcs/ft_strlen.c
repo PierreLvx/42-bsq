@@ -6,11 +6,11 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:46:00 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/15 15:51:34 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 23:15:32 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libs.h"
+#include "includes/libs.h"
 
 int	ft_strlen(char *str)
 {

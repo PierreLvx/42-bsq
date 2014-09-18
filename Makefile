@@ -23,10 +23,10 @@ SRCS =	srcs/checks.c \
 		srcs/main.c \
 		srcs/printtable.c \
 		srcs/stdintable.c \
-		srcs/libft/ft_atoi.c \
-		srcs/libft/ft_putchar.c \
-		srcs/libft/ft_strlen.c \
-		srcs/utils/ft_write_err.c
+		srcs/ft_atoi.c \
+		srcs/ft_putchar.c \
+		srcs/ft_strlen.c \
+		srcs/ft_write_err.c
 
 OBJ = $(patsubst srcs/%.c, %.o, $(SRCS))
 

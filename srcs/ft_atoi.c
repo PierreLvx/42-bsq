@@ -6,11 +6,11 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/01 14:26:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 22:00:41 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 23:15:39 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libs.h"
+#include "includes/libs.h"
 
 void	change_number(int *num, int *factor, char *ptr)
 {

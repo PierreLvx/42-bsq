@@ -6,11 +6,11 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 15:30:29 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/15 15:51:13 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 23:15:36 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libs.h"
+#include "includes/libs.h"
 
 void	ft_putchar(char str)
 {

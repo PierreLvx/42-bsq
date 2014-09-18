@@ -6,11 +6,11 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:49:18 by plavaux           #+#    #+#             */
-/*   Updated: 2014/09/18 00:34:51 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 23:15:48 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libs.h"
+#include "includes/libs.h"
 
 /*
 ** Print an error message to stderr
