@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/18 03:40:21 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 21:51:54 by plavaux          ###   ########.fr       */
+/*   Updated: 2014/09/18 21:54:31 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,10 @@ int			*get_line_obstacles(int **chars, int i, int size, int j)
 	int		*array;
 	int		*new;
 
-	array = malloc(1);
 	new = malloc(1);
 	while (read(0, &buff, 1) && (buff != '\n'))
 	{
+		array = new;
 		if (buff == (*chars)[2])
 		{
 			i = -1;
@@ -85,7 +85,6 @@ int			*get_line_obstacles(int **chars, int i, int size, int j)
 			free(array);
 			new[i] = j;
 			size++;
-			array = new;
 		}
 		if (buff != (*chars)[1] && buff != (*chars)[2] && buff != (*chars)[3])
 			return (NULL);
