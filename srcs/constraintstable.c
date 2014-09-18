@@ -6,7 +6,7 @@
 /*   By: plavaux <plavaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/15 17:33:39 by fschuber          #+#    #+#             */
-/*   Updated: 2014/09/18 03:02:13 by fschuber         ###   ########.fr       */
+/*   Updated: 2014/09/18 11:16:12 by plavaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int			*get_info(char *filename)
 	int		file;
 	char	*ptr;
 
-	array = malloc(sizeof(int*) * 5);
+	array = malloc(sizeof(int*) * 4);
 	file = open(filename, O_RDONLY);
 	read(file, buff, 20);
 	array[0] = ft_special_atoi(buff);
